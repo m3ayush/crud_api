@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended: false}));
 
 
 //routes
-//app.use('/api/products',productRoute);
+app.use('/api/products',productRoute);
 
 
 
@@ -99,7 +99,7 @@ mongoose.connect("mongodb+srv://ayushbhat0518:ayushbhat0518@cluster0.7xhql4d.mon
 .then(()=>{
     console.log("Connected to database!")
     app.listen(3000,()=>{
-    console.log("Server is running on port 3000")
+        console.log("Server is running on port 3000")
     });
 })
 .catch(()=>{
