@@ -49,7 +49,7 @@ const updateProduct = async (req, res) => {
     }
 };
 
-const deleteProduct= async (res,req) => {
+const deleteProduct= async (req,res) => {
     try {
         const {id}= req.params;
         const product=await Product.findByIdAndDelete(id);
@@ -60,7 +60,7 @@ const deleteProduct= async (res,req) => {
 
         res.status(200).json({message: "Product deleted successfully"})
     } catch (error) {
-        response.status(500).json({message: error.message})
+        res.status(500).json({message: error.message})
     }
 }
 
